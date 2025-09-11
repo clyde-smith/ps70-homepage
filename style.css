@@ -1,8 +1,8 @@
 body {
-    font: 20px "Gill Sans", Verdana, sans-serif;
+    font: 20px "baskerville", Verdana, sans-serif;
     line-height: 1.8;
-    color: #000000;
-    background-color: #dcdcdc;
+    color: darkgreen;
+    background-color: lightyellow;
     padding-top: 0px !important;
   }
 
@@ -23,8 +23,8 @@ a {
 }
 
 nav {
-  background-color: #dcdcdc;
-  color: #EEE7E8;
+  background-color: lightyellow;
+  color: black;
   padding: 50px 0px;
 }
 
@@ -37,15 +37,18 @@ nav {
 .nav-title{
   margin-left: 15px;
   margin-right: 15px;
-  color: #000000;
+  color: black;
+    font-size: 40px;
+    font-family: "Georgia", serif; 
+    font-weight: bold;
 }
 
 .nav-link {
   border: 3px outset #a3a3a3;
   border-radius: 20px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
-  color: #EEE7E8;
+  background-color: blue;
+  color: white;
   transition: 0.3s;
 }
 
@@ -53,7 +56,8 @@ nav {
   border: 3px outset #FFFFFF;
   border-radius: 20px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
+  background-color: red;
+  color: white;
   transition: 0.3s;
 }
 
