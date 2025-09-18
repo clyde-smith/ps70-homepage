@@ -65,7 +65,7 @@ nav {
   border: 3px outset #FFFFFF;
   border-radius: 40px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
+  background-color: yellow;
   color: #000000;
   transition: 0.3s;
 }
@@ -74,7 +74,7 @@ nav {
   border: 3px inset #FFFFFF;
   border-radius: 40px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
+  background-color: yellow;
   transition: 0.3s;
 }
 
