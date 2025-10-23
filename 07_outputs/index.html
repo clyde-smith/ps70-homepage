@@ -7,9 +7,10 @@
 
 <!-- minimal helpers to fix the display -->
 <style>
-  /* make media not wrap with text and scale nicely on phone/desktop */
+  /* keep media responsive */
   img, video { max-width: 100%; height: auto; display: block; }
-  .media-stack > * { max-width: 700px; margin: 12px auto; } /* center + pleasant width */
+  /* ↓ was 700px; halved to 350px for both images and video */
+  .media-stack > * { max-width: 350px; margin: 12px auto; }
 </style>
 
 <nav class="navbar navbar-expand-sm navbar-dark" style=" color: #EEE7E8;">
@@ -57,10 +58,9 @@
 
 <p style="color:black; font-size:18px;"> I used the oscilloscope to check the timing of my I2c display screen. I expected it to output about 100,000 times per second and this was confirmed by the oscilloscope. It found it to be 10 microseconds per reading, which equals 100,000 outputs per second.<p>
 
-<!-- single image; let CSS handle sizing -->
 <img src="mvpclocktiming.png" alt="Oscilloscope Reading for I2c">
 
-<!-- media block simplified: no inline flex, no widths, no extra <br>s -->
+<!-- media block (now half the previous max size) -->
 <div class="media-stack">
   <video controls>
     <source src="mvpdisplay.MOV" type="video/mp4">
