@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calibration — BedScale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root{ --bg:#fffbea; --fg:#0f5132; --muted:#667085; }
+      html,body{ height:100%; background:var(--bg); color:var(--fg); }
+      .appbar{ position:sticky; top:0; z-index:1000; padding:.75rem 1rem;
+               background:rgba(255,255,255,.6); backdrop-filter:blur(6px); display:flex; align-items:center; gap:.5rem; }
+      .appbar h1{ margin:0; font-size:1.125rem; font-weight:700; }
+      main{ min-height:100dvh; padding:2rem; padding-bottom:calc(2rem + env(safe-area-inset-bottom,0)); }
+    </style>
+  </head>
+  <body>
+    <header class="appbar">
+      <a class="btn btn-sm btn-outline-secondary" href="index.html">← Back</a>
+      <h1>Calibration</h1>
+    </header>
+
+    <main class="container">
+      <p class="text-muted">PCalibration Instructions </p>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Your Vehicle Information</h5>
+          <p class="card-text">placeholder text</p>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">How to calibrate</h5>
+          <p class="card-text">More placeholder text</p>
+        </div>
+      </div>
+
+      <div class="d-grid">
+        <a class="btn btn-outline-primary" href="index.html">Home</a>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
