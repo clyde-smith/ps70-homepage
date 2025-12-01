@@ -24,7 +24,7 @@
 
 <h3>Final Project: Bed Scale </h3>
 
-<p style="color:darkviolet; font-size:18px;">
+<p style="color:black; font-size:22px;">
 I successfully tested my project on two different trucks, but due to various difficulties, have not included a video. I ended up doing my calibration and testing in the rain, which was not ideal given that I have not really developed a water resistant housing yet. I was also accessing my web page with my phone and had all the people with me acting as weights to actually test my project. For this reason, it was very hard to actually get a video, and the video would not have shown much since people were in the bed, the phone was in my hand with the readout, and my sensor was underneath the car.
 <br><br>
 Instead, I have attatched a video of a mock calibration done on my desk with fake weights.
@@ -36,12 +36,12 @@ Instead, I have attatched a video of a mock calibration done on my desk with fak
     <source src="mockcalibratoin.mov" type="video/mp4">
   </video>
 
-  <p style="color:darkviolet; font-size:18px; flex:1; min-width:260px;">
+  <p style="color:black; font-size:22px; flex:1; min-width:260px;">
   This video includes a mock calibration I did with a series of fake weights. In the video I move the sensor through a range of distances, corresponding to a full weight range in a car and you can see the readout. I went through this process many times, adjusting the code for increased stability of readout vs increased responsiveness, and it was very helpful.
   </p>
 </div>
 
-<p style="color:darkviolet; font-size:18px;">
+<p style="color:black; font-size:22px;">
 Below is are some photos of my circuit board and my webpages. I have a very basic circuit that just connects my esp 32 to the VLOX 53 distance sensor. Initially I had separate links for calibration, point storage, and readout, just to make sure that each part was working and make debugging easier. I then moved to having it all on one page, but now have it on two pages, which are linked together. This way once you do an initial calibration, you can just stay on the readout page without risking accidentally clearing your calibration history and adding another point and messing it up.
 </p>
 
@@ -53,7 +53,7 @@ Below is are some photos of my circuit board and my webpages. I have a very basi
   <img src="readoutpage.PNG" alt="readout webpage" style="width:45%; height:auto;">
 </div>
 
-<p style="color:darkviolet; font-size:18px;">
+<p style="color:black; font-size:22px;">
 My initial car testing was successful, but also bighlighted some difficulties. To start with successes, I was able to mount it, I calibrated it up to about 650 lbs, and I got a somewhat reliable readout upon testing weights after the calibration. The first challenge, was mounting my sensor. I planned to use magnets to hold it up, but I used magents to attatch my circuit board to a metal plate and then I stuck the metal plate to my car. I then spent a significant amount of time trying to figure out why it was wokring, then not working then working again seemingly random. But, it turns out that the metal was stopping it from working. My guess is that some wires may have been poking through the board, hitting the metal and shorting. I ended up solving this issue by taping my sensor to a large plastic container and taping a magnet to that plastic and then attaching it. This worked great on my truck, but I then went to test it on a different truck and found a more difficult mounting area. The rear differential, where I mounted on my truck, was covered in houses and wires and random things that made it very hard to stick my sensor on. Eventually I got it attatched at a not perfect angle, but it worked.
 </p>
 
@@ -63,28 +63,21 @@ My initial car testing was successful, but also bighlighted some difficulties. T
   <img src="oncar2.png" alt="sensor on car" style="width:45%; height:auto;">
 </div>
 
-<p style="color:darkviolet; font-size:18px;">
+<p style="color:black; font-size:22px;">
 The next problem was in the readout consistency. Upon my first test, the readout was changing by hundreds of pounds a second, while the actual weight was unchanging. I then increased the stability of the readout with a few changes. The first is by taking a slow exponential moving average, so instead of reading the exact current distance, it reads the average of the last few seconds. The other is a minimum change threshold which ignores minor changes in distance under a few mm.
 <br><br>
 The issue with this is I am dealing with huge amounts of weight, 0 - 1000+ lbs, but only small distance changes, less than 40 mm. Minor distance changes correspond to large weight changes, but the sensor naturaly has some minor variation in its distance reading. Even steady on a table, it will vary within a few mm which can correspond to a couple hundred pounds on a car. This variation is worsened when the sensor is not at a perfect 90 degree angle, which as I described early was very difficult to acheive.
 <br><br>
 I ended up doing a few different tests, gradually increasing or decreasing the stability of the readout by reducing responsiveness and gaining more consistent readout, or by increasing responsiveness and increasing how much the readout jumps around. The final version worked OK. It game me a relatively consistent readout, that would occasionally jump by 150 lbs or so, and was somewhat accurate. For example, when testing, 150 lbs might read 225 lbs instead or zero lbs was reading between 35 and 65. Exactly why this is I don't know. My guess is that because the sensor varies, when I mark my calibration point, it is possible I mark it at the high or low end of the average instantaneously, and then when reading the weight, I am taking the average so these numbers dont match up. I think in my next version, I am going to try to take the calibration point as an average. I would add weight, start calibration and then wait 5 or so seconds and it would then mark the average distance as that weight. This wont the stability of the readout, but it should improve accuracy slightly.
 <br><br>
-
-<p class="margin">   </p>
-<div class="flexrow">
-  <a id="btn" href="mockcalibration.mov" download> View Code </a>
-</div>
-<p class="margin">   </p>
-
-<br><br>
 My current next steps are to build a new housing for the sensor, continuing to mess with the calibration and readout consistency, and to build some contraption to model my project in class. My plan is to have a two piece housing with a part that lives peramnently on the car, and a part for the circuit board that fits into this piece and comes on and off when you want to weigh something. At the moment I'm not sure if I can make a housing that could work equally well on a range of vehicles, but I will start with making one, and look towards that in the future.
 </p>
+
 <br>
 
 <h3>Midterm Updates </h3>
 
-<p style="color:darkviolet; font-size:18px;">
+<p style="color:black; font-size:22px;">
 Below is a basic model of my final project. The black represents the rear axel and differential of a car and the bottom of the bed or trunk. The blue represents my distance sensor and a small plate to maintain a flat angle above the diff. The dotted lines are just to depict the infrared of the sensor. The length of those lines will decrease as weight is added to the car and the distance will be correlated with weight.
 </p>
 
@@ -93,7 +86,7 @@ Below is a basic model of my final project. The black represents the rear axel a
   <a id="btn" href="FPbasicmodel.f3d" download> view final prjoject model </a>
 </div>
 
-<p style="color:darkviolet; font-size:18px;">
+<p style="color:black; font-size:22px;">
 Timeline:<br>
 I have already written the code for my sensor, but have not tested it yet. I will print 3D print a housing for my sensor this coming week with spaces for magents, and figure out attatching it to a metal plate. By the end of next week I should have my sensor in an attachable housing and have basic distance code written.
 </p>
