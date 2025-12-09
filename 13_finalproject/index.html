@@ -40,7 +40,7 @@ Instead, I have attatched a video of a mock calibration done on my desk with fak
 
 <!-- VIDEO EXPLANATION TEXT -->
 <p style="color:black; font-size:22px;">
-This video includes a mock calibration I did with a series of fake weights. In the video I move the sensor through a range of distances, corresponding to a full weight range in a car and you can see the readout. I went through this process many times, adjusting the code for increased stability of readout vs increased responsiveness, and it was very helpful.
+This video includes a mock calibration I did with a series of imaginary weights. In the video I move the sensor through a range of distances, corresponding to a full weight range in a car and you can see the readout. I went through this process many times, adjusting the code for increased stability of readout vs increased responsiveness, and it was very helpful.
 </p>
 
 <p style="color:black; font-size:22px;">
@@ -72,12 +72,29 @@ The issue with this is I am dealing with huge amounts of weight, 0 - 1000+ lbs, 
 <br><br>
 I ended up doing a few different tests, gradually increasing or decreasing the stability of the readout by reducing responsiveness and gaining more consistent readout, or by increasing responsiveness and increasing how much the readout jumps around. The final version worked OK. It game me a relatively consistent readout, that would occasionally jump by 150 lbs or so, and was somewhat accurate. For example, when testing, 150 lbs might read 225 lbs instead or zero lbs was reading between 35 and 65. Exactly why this is I don't know. My guess is that because the sensor varies, when I mark my calibration point, it is possible I mark it at the high or low end of the average instantaneously, and then when reading the weight, I am taking the average so these numbers dont match up. I think in my next version, I am going to try to take the calibration point as an average. I would add weight, start calibration and then wait 5 or so seconds and it would then mark the average distance as that weight. This wont the stability of the readout, but it should improve accuracy slightly.
 <br><br>
+Below is my full code that I would upload for use on a truck.
+<br><br>
 
 <p class="margin"> </p> <div class="flexrow"> <a id="btn" href="calibrationv9.zip" download> View Code </a> </div> <p class="margin"> </p>
 
 <p style="color:black; font-size:22px;">
-My current next steps are to build a new housing for the sensor, continuing to mess with the calibration and readout consistency, and to build some contraption to model my project in class. My plan is to have a two piece housing with a part that lives peramnently on the car, and a part for the circuit board that fits into this piece and comes on and off when you want to weigh something. At the moment I'm not sure if I can make a housing that could work equally well on a range of vehicles, but I will start with making one, and look towards that in the future.
+For the in class demo, I built a small contraption to model what happens when you weight the bed of a truck. The model features two springs supporting a flat top above the sensor, which slides in and out through the side. As you add weight to the top, the springs compress, decreasing the distance between the sensor and the top. I mounted the springs to the base and top using short pieces of metal pipe that sit in holes in the wood and slide into the springs. In order to keep the weights on top and and keep it level, I added walls to the model that are fixed to the base, but loose against the top, ensuring it stays centered as the springs compress. The results from the calibration of my model are included below.
 </p>
+
+<div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+  <img src="modelcorner.png" style="width:45%; height:auto;">
+  <img src="weightedmodel.png" style="width:45%; height:auto;">
+  <img src="modelsensor.png" style="width:45%; height:auto;">
+  <img src="modelspring.png" style="width:45%; height:auto;">
+  <img src="modelcalibration.PNG" style="width:45%; height:auto;">
+
+</div>
+
+<p style="color:black; font-size:22px;">
+The code used in this model can be downloaded below. The only difference here is that it lowers the distance threshold to register a change. This was important since the total distance covered in the model is far less than on a car. 
+</p>
+
+<p class="margin"> </p> <div class="flexrow"> <a id="btn" href="calibrationv11minimodel.zip" download> View Code </a> </div> <p class="margin"> </p>
 
 <br>
 
