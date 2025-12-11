@@ -72,7 +72,6 @@ My sensor and batter pack both have pretty basic 3D printed housings. Each featu
 
 <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
   <img src="housingsides.png"        alt="circuit board"         class="project-img">
-  <img src="sensorhousing1.png" alt="old calibration page" class="project-img">
   <img src="sensortop.png"      alt="add calibration page"     class="project-img">
   <img src="housingbacks.png"          alt="readout page"         class="project-img">
 </div>
@@ -93,6 +92,8 @@ Below are some photos of my circuit board and my webpages. I have a very basic c
   <img src="viewcalibration.png"          alt="view calibration page"         class="project-img">
 </div>
 
+<br><br>
+
 <p style="color:black; font-size:22px;">
 My initial car testing was successful, but also bighlighted some difficulties. To start with successes, I was able to mount it, I calibrated it up to about 650 lbs, and I got a somewhat reliable readout upon testing weights after the calibration. The first challenge, was mounting my sensor. I planned to use magnets to hold it up, but I used magents to attatch my circuit board to a metal plate and then I stuck the metal plate to my car. I then spent a significant amount of time trying to figure out why it was wokring, then not working then working again seemingly random. But, it turns out that the metal was stopping it from working. My guess is that some wires may have been poking through the board, hitting the metal and shorting. I ended up solving this issue by taping my sensor to a large plastic container and taping a magnet to that plastic and then attaching it. This worked great on my truck, but I then went to test it on a different truck and found a more difficult mounting area. The rear differential, where I mounted on my truck, was covered in hoses and wires and random things that made it very hard to stick my sensor on. Eventually I got it attatched at a not perfect angle, but it worked. I now have a much smaller cleaner housing, but have yet to test it on a car. I know it will work well on my own truck, but I am hoping it will also work better on others. 
 </p>
@@ -103,6 +104,8 @@ My initial car testing was successful, but also bighlighted some difficulties. T
   <img src="oncar2.png" alt="sensor on car" class="project-img">
 </div>
 
+<br><br>
+
 <p style="color:black; font-size:22px;">
 The next problem was in the readout consistency. Upon my first test, the readout was changing by hundreds of pounds a second, while the actual weight was unchanging. I then increased the stability of the readout with a few changes. The first is by taking a slow exponential moving average, so instead of reading the exact current distance, it reads the average of the last few seconds. Also, during calibration, after clicking the button, it waits five seconds and takes the average of that as the point. The other is a minimum change threshold which ignores minor changes in distance under a few mm, stopping it from bouncing between one or two mm jitters. 
 <br><br>
@@ -111,7 +114,6 @@ The issue with this is I am dealing with huge amounts of weight, 0 - 1000+ lbs, 
 I ended up doing a few different tests, gradually increasing or decreasing the stability of the readout by reducing responsiveness and gaining more consistent readout, or by increasing responsiveness and increasing how much the readout jumps around. The final version worked OK. It game me a relatively consistent readout, that would occasionally jump by 150 lbs or so, and was somewhat accurate. For example, when testing, 150 lbs might read 225 lbs instead or zero lbs was reading between 35 and 65. I think this is in part due to the variation of the sensor and of the suspension in the truck. 
 <br><br>
 Below is my full code that I would upload for use on a truck.
-<br><br>
 </p>
 
 <p class="margin"></p>
@@ -131,6 +133,8 @@ For the in class demo, I built a small contraption to model what happens when yo
   <img src="modelspring.png"      alt="model spring"      class="project-img">
   <img src="modelcalibration.PNG" alt="model calibration" class="project-img">
 </div>
+
+<br>
 
 <p style="color:black; font-size:22px;">
 The code used in this model can be downloaded below. The only difference here is that it lowers the distance threshold to register a change. This was important since the total distance covered in the model is only about ten mm. 
