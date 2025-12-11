@@ -5,6 +5,17 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="../style.css" rel="stylesheet">
 
+<!-- Image sizing + aspect-ratio fix -->
+<style>
+  img.project-img {
+    max-width: 30%;
+    height: auto;          /* keeps proportions */
+    object-fit: contain;   /* extra safety against squishing */
+    display: block;
+    margin: 0.5rem auto;
+  }
+</style>
+
 <nav class="navbar navbar-expand-sm navbar-dark" style="color:#EEE7E8;">
   <div style="align-items:center; justify-content:center;" class="container-fluid">
     <div class="flexrow">
@@ -25,6 +36,9 @@
 
 <h3 style="color:black;">Final Project: Bed Scale</h3>
 
+<p class="margin"></p>
+
+<!-- Demo video button in its own row -->
 <div class="flexrow">
   <a id="btn"
      href="https://youtu.be/vqP8w1fHznE"
@@ -57,10 +71,10 @@ Below is are some photos of my circuit board and my webpages. I have a very basi
 
 <!-- IMAGE GRID 1 -->
 <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
-  <img src="circuitboard.png" style="width:45%; height:auto;">
-  <img src="earlycalibrationpage.PNG" style="width:45%; height:auto;">
-  <img src="calibrationpage.PNG" style="width:45%; height:auto;">
-  <img src="readoutpage.PNG" style="width:45%; height:auto;">
+  <img src="circuitboard.png"        alt="circuit board"         class="project-img">
+  <img src="earlycalibrationpage.PNG" alt="old calibration page" class="project-img">
+  <img src="calibrationpage.PNG"      alt="calibration page"     class="project-img">
+  <img src="readoutpage.PNG"          alt="readout page"         class="project-img">
 </div>
 
 <p style="color:black; font-size:22px;">
@@ -69,8 +83,8 @@ My initial car testing was successful, but also bighlighted some difficulties. T
 
 <!-- IMAGE GRID 2 -->
 <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
-  <img src="oncar1.png" style="width:45%; height:auto;">
-  <img src="oncar2.png" style="width:45%; height:auto;">
+  <img src="oncar1.png" alt="sensor on car" class="project-img">
+  <img src="oncar2.png" alt="sensor on car" class="project-img">
 </div>
 
 <p style="color:black; font-size:22px;">
@@ -82,27 +96,35 @@ I ended up doing a few different tests, gradually increasing or decreasing the s
 <br><br>
 Below is my full code that I would upload for use on a truck.
 <br><br>
+</p>
 
-<p class="margin"> </p> <div class="flexrow"> <a id="btn" href="calibrationv9.zip" download> View Code </a> </div> <p class="margin"> </p>
+<p class="margin"></p>
+<div class="flexrow">
+  <a id="btn" href="calibrationv9.zip" download> View Code </a>
+</div>
+<p class="margin"></p>
 
 <p style="color:black; font-size:22px;">
 For the in class demo, I built a small contraption to model what happens when you weight the bed of a truck. The model features two springs supporting a flat top above the sensor, which slides in and out through the side. As you add weight to the top, the springs compress, decreasing the distance between the sensor and the top. I mounted the springs to the base and top using short pieces of metal pipe that sit in holes in the wood and slide into the springs. In order to keep the weights on top and and keep it level, I added walls to the model that are fixed to the base, but loose against the top, ensuring it stays centered as the springs compress. The results from the calibration of my model are included below.
 </p>
 
 <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
-  <img src="modelcorner.png" style="width:45%; height:auto;">
-  <img src="weightedmodel.png" style="width:45%; height:auto;">
-  <img src="modelsensor.png" style="width:45%; height:auto;">
-  <img src="modelspring.png" style="width:45%; height:auto;">
-  <img src="modelcalibration.PNG" style="width:45%; height:auto;">
-
+  <img src="modelcorner.png"      alt="model corner"      class="project-img">
+  <img src="weightedmodel.png"    alt="weighted model"    class="project-img">
+  <img src="modelsensor.png"      alt="model sensor"      class="project-img">
+  <img src="modelspring.png"      alt="model spring"      class="project-img">
+  <img src="modelcalibration.PNG" alt="model calibration" class="project-img">
 </div>
 
 <p style="color:black; font-size:22px;">
 The code used in this model can be downloaded below. The only difference here is that it lowers the distance threshold to register a change. This was important since the total distance covered in the model is far less than on a car. 
 </p>
 
-<p class="margin"> </p> <div class="flexrow"> <a id="btn" href="calibrationv11minimodel.zip" download> View Code </a> </div> <p class="margin"> </p>
+<p class="margin"></p>
+<div class="flexrow">
+  <a id="btn" href="calibrationv11minimodel.zip" download> View Code </a>
+</div>
+<p class="margin"></p>
 
 <br>
 
