@@ -47,6 +47,8 @@
   </a>
 </div>
 
+<br>
+
 <p style="color:black; font-size:22px;">
 I successfully tested my project on two different trucks, but due to various difficulties, have not included a video. I ended up doing my calibration and testing in the rain, which was not ideal given that my test weights were a group of friends. For this reason, it was very hard to actually get a video, and the video would not have shown much since people were in the bed, the phone was in my hand with the readout, and my sensor was underneath the car.
 <br><br>
@@ -68,7 +70,6 @@ This video includes a calibration I did with a series of imaginary weights. In t
 <p style="color:black; font-size:22px;">
 My sensor and batter pack both have pretty basic 3D printed housings. Each features a hole for charging and the sensor housing also has a hole for the laster. The lids are screwed on through nuts that drop into the walls of the base and the back of each has slots for magnets for easy attatchment to cars.  
 </p>
-<br>
 
 <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
   <img src="housingsides.png"        alt="circuit board"         class="project-img">
@@ -76,7 +77,7 @@ My sensor and batter pack both have pretty basic 3D printed housings. Each featu
   <img src="housingbacks.png"          alt="readout page"         class="project-img">
 </div>
 
-<br><br>
+<br>
 
 <p style="color:black; font-size:22px;">
 Below are some photos of my circuit board and my webpages. I have a very basic circuit that just connects my esp 32 to the VLOX 53 distance sensor. Initially I had separate links for calibration, point storage, and readout, just to make sure that each part was working and make debugging easier. I then moved to having it all on one page, but now have it on two pages, which are linked together. I have also added a series of features allowing you to delete a specific point if something went wrong, so you don't have to redo an entire calibration. It now also allows you to add and save multiple different calibrations. This means once it is calibrated to multiple vehicles and be easily switched between the two with the touch of a button. You can also view each old calibration if you want to check accuracy or compare for any reason.
@@ -92,7 +93,7 @@ Below are some photos of my circuit board and my webpages. I have a very basic c
   <img src="viewcalibration.png"          alt="view calibration page"         class="project-img">
 </div>
 
-<br><br>
+<br>
 
 <p style="color:black; font-size:22px;">
 My initial car testing was successful, but also bighlighted some difficulties. To start with successes, I was able to mount it, I calibrated it up to about 650 lbs, and I got a somewhat reliable readout upon testing weights after the calibration. The first challenge, was mounting my sensor. I planned to use magnets to hold it up, but I used magents to attatch my circuit board to a metal plate and then I stuck the metal plate to my car. I then spent a significant amount of time trying to figure out why it was wokring, then not working then working again seemingly random. But, it turns out that the metal was stopping it from working. My guess is that some wires may have been poking through the board, hitting the metal and shorting. I ended up solving this issue by taping my sensor to a large plastic container and taping a magnet to that plastic and then attaching it. This worked great on my truck, but I then went to test it on a different truck and found a more difficult mounting area. The rear differential, where I mounted on my truck, was covered in hoses and wires and random things that made it very hard to stick my sensor on. Eventually I got it attatched at a not perfect angle, but it worked. I now have a much smaller cleaner housing, but have yet to test it on a car. I know it will work well on my own truck, but I am hoping it will also work better on others. 
@@ -104,7 +105,7 @@ My initial car testing was successful, but also bighlighted some difficulties. T
   <img src="oncar2.png" alt="sensor on car" class="project-img">
 </div>
 
-<br><br>
+<br>
 
 <p style="color:black; font-size:22px;">
 The next problem was in the readout consistency. Upon my first test, the readout was changing by hundreds of pounds a second, while the actual weight was unchanging. I then increased the stability of the readout with a few changes. The first is by taking a slow exponential moving average, so instead of reading the exact current distance, it reads the average of the last few seconds. Also, during calibration, after clicking the button, it waits five seconds and takes the average of that as the point. The other is a minimum change threshold which ignores minor changes in distance under a few mm, stopping it from bouncing between one or two mm jitters. 
